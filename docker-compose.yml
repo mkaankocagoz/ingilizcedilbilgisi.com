@@ -1,0 +1,42 @@
+version: '2'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./docker/app/Dockerfile
+    networks:
+      bspanelnetwork:
+        ipv4_address: 19.8.0.5
+    ports:
+      - "7272:7272"
+    volumes:
+      - ./:/var/www
+    command: "php artisan serve --host=19.8.0.5 --port=7272"
+    restart: "no"
+    links:
+      - db
+  db:
+    hostname: ingilizce-db-server
+    build:
+      context: ./
+      dockerfile: ./docker/db/Dockerfile
+    networks:
+      bspanelnetwork:
+        ipv4_address: 19.8.0.9
+    restart: "no"
+    ports:
+      - 23166:3306
+    volumes:
+      - ./docker/db/mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      MYSQL_DATABASE: ingilizce
+networks:
+  bspanelnetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 19.8.0.0/16
+          gateway: 19.8.0.1
