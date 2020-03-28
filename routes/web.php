@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Auth::routes();
+
+Route::namespace('FrontController')->group(function () {
+    Route::get('/', 'BaseController@index');
 });
+
+Route::namespace('BackController')->group(function () {
+    Route::get('/admin', 'BaseController@index');
+});
+
+
