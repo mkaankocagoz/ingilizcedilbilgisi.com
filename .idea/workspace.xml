@@ -2,43 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="508c9fcb-7b06-4ef0-9268-48a5a9a96a44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/front_assets/fonts/revicons/revicons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/fonts/revicons/revicons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/fonts/revicons/revicons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/fonts/revicons/revicons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/js/jquery.flipshow.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-brands-400-1.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-regular-400-1.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-solid-900-1.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front_assets/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front_office/layouts/slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ingilizcedilbilgisi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ingilizcedilbilgisi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Pages.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_28_193144_create_articles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_28_193435_create_pages_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/css/app.bundle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/css/fullcalendar.bundle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/css/jqvmap.bundle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/css/reactions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/css/vendors.bundle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/img/avatar-admin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/img/avatar-j.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/img/cover-2-lg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/img/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/app.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/easypiechart.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/flot.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/fullcalendar.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/jqvmap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/sparkline.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/js/vendors.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-brands-400-1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-light-300-1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-light-300.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-light-300.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-light-300.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-light-300.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-light-300.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-regular-400-1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-solid-900-1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/nextgen-icons-1.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/nextgen-icons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/nextgen-icons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/summernote.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/summernote.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/back_assets/webfonts/summernote.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/back_office/layouts/left_menu.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/back_office/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackController/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackController/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back_office/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back_office/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,21 +176,27 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1Z7ciAER3XLafUbQn7feZIN9Mg2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/front_assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/back_assets/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PROJELER\ingilizcedilbilgisi" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\back_assets\css" />
+      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\back_assets\img" />
+      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\back_assets" />
+      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\back_assets\js" />
       <recent name="D:\PROJELER\ingilizcedilbilgisi\public\front_assets" />
-      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\front_assets\webfonts" />
-      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\front_assets\js" />
-      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\front_assets\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROJELER\ingilizcedilbilgisi\public\back_assets\img" />
+      <recent name="D:\PROJELER\ingilizcedilbilgisi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -210,7 +236,7 @@
       <workItem from="1585399013353" duration="2000" />
       <workItem from="1585399048408" duration="42000" />
       <workItem from="1585399106772" duration="1894000" />
-      <workItem from="1585411608193" duration="1381000" />
+      <workItem from="1585411608193" duration="6963000" />
     </task>
     <servers />
   </component>
@@ -229,5 +255,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
