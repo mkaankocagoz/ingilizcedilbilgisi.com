@@ -5,6 +5,7 @@
     <title>
         ingilizcedilbilgisi.com Admin Paneli
     </title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Analytics Dashboard">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
@@ -16,6 +17,8 @@
     <link rel="stylesheet" media="screen, print" href="{{ asset('back_assets/css/reactions.css') }}">
     <link rel="stylesheet" media="screen, print" href="{{ asset('back_assets/css/fullcalendar.bundle.css') }}">
     <link rel="stylesheet" media="screen, print" href="{{ asset('back_assets/css/jqvmap.bundle.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('back_assets/css/summernote.min.css') }}">
+    @yield('css')
 </head>
 <body class="mod-bg-1 ">
 <div class="page-wrapper">
@@ -28,28 +31,13 @@
                 </a>
             </div>
             <nav id="js-primary-nav" class="primary-nav" role="navigation">
-                <div class="nav-filter">
-                    <div class="position-relative">
-                        <input type="text" id="nav_filter_input" placeholder="Filter menu" class="form-control" tabindex="0">
-                        <a href="#" onclick="return false;" class="btn-primary btn-search-close js-waves-off" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar">
-                            <i class="fal fa-chevron-up"></i>
-                        </a>
-                    </div>
-                </div>
                 <div class="info-card">
-                    <img src="{{ asset('back_assets/img/avatar-admin.png') }}" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
                     <div class="info-card-text">
-                        <a href="#" class="d-flex align-items-center text-white">
-                                    <span class="text-truncate text-truncate-sm d-inline-block">
-                                        Dr. Codex Lantern
-                                    </span>
-                        </a>
-                        <span class="d-inline-block text-truncate text-truncate-sm">Toronto, Canada</span>
+                         <span class="text-truncate text-white text-truncate-xl d-inline-block">
+                             {{ Auth::user()->name }}
+                         </span>
                     </div>
                     <img src="{{ asset('back_assets/img/cover-2-lg.png') }}" class="cover" alt="cover">
-                    <a href="#" onclick="return false;" class="pull-trigger-btn" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar" data-focus="nav_filter_input">
-                        <i class="fal fa-angle-down"></i>
-                    </a>
                 </div>
 
                 @include('back_office.layouts.left_menu')
@@ -193,5 +181,7 @@
 <script src="{{ asset('back_assets/js/easypiechart.bundle.js') }}"></script>
 <script src="{{ asset('back_assets/js/flot.bundle.js') }}"></script>
 <script src="{{ asset('back_assets/js/jqvmap.bundle.js') }}"></script>
+<script src="{{ asset('back_assets/js/summernote.min.js') }}"></script>
+@yield('js')
 </body>
 </html>
