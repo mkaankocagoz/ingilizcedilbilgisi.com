@@ -14,67 +14,66 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-8">
-            <div id="panel-1" class="panel" data-panel-lock="false" data-panel-close="false" data-panel-fullscreen="false" data-panel-collapsed="false" data-panel-color="false" data-panel-locked="false" data-panel-refresh="false" data-panel-reset="false">
+        <div class="col-lg-12">
+
+            <div id="panel-1" class="panel">
                 <div class="panel-hdr">
                     <h2>
-                        Tüm Makaleler
+                        Tüm içerikler
                     </h2>
                 </div>
                 <div class="panel-container show">
-                    <div class="panel-content border-faded border-left-0 border-right-0 border-top-0">
-                        <div class="row no-gutters">
-
-                            <table class="table m-0 table-dark table-hover table-striped table-bordered" id="table-list">
-                                <thead>
-                                <tr>
-                                    <th>Başlık</th>
-                                    <th>Gösterim</th>
-                                    <th>Sıralama</th>
-                                    <th>Durum</th>
-                                    <th>İşlem</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @if(isset($articles))
-                                    @foreach($articles as $item)
-                                <tr>
-                                    <td style="vertical-align: middle;" width="50%">{{ \Str::limit($item->title, 60) }}</td>
-                                    <td style="vertical-align: middle;" align="center">0</td>
-                                    <td style="vertical-align: middle;" align="center">1</td>
-                                    <td style="vertical-align: middle;" align="center">
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="customSwitch{{$item->id}}" @if($item->status == 1)checked @endif onclick="changeStatus({{ $item->id }})">
-                                            <label class="custom-control-label" for="customSwitch{{$item->id}}" id="labelStatus{{$item->id}}">@if($item->status == 1)Aktif @else Pasif @endif</label>
-                                        </div>
-                                    </td>
-                                    <td style="vertical-align: middle;" width="17%">
-                                        <a class="btn btn-light" href="{{ url('/admin/pages/edit/'.$item->id) }}">Düzenle</a>
-                                        <a class="btn btn-light" href="{{ url('/admin/pages/delete/'.$item->id) }}">Sil</a>
-                                    </td>
-                                </tr>
-                                    @endforeach
-                                @endif
-                                </tbody>
-                            </table>
-                        </div>
-                        <a href="{{ url('/admin/pages/create/'.$id) }}" class="btn btn-primary" style="margin-top: 10px;"> Makale Ekle </a>
+                    <div class="panel-content">
+                        <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+                            <thead>
+                            <tr>
+                                <th>Başlık</th>
+                                <th>Gösterim</th>
+                                <th>Sıralama</th>
+                                <th>Durum</th>
+                                <th>İşlem</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @if(isset($articles))
+                                @foreach($articles as $item)
+                                    <tr>
+                                        <td style="vertical-align: middle;" width="50%">{{ \Str::limit($item->title, 60) }}</td>
+                                        <td style="vertical-align: middle;" align="center">0</td>
+                                        <td style="vertical-align: middle;" align="center">1</td>
+                                        <td style="vertical-align: middle;" align="center">
+                                            <div class="custom-control custom-switch">
+                                                <input type="checkbox" class="custom-control-input" id="customSwitch{{$item->id}}" @if($item->status == 1)checked @endif onclick="changeStatus({{ $item->id }})">
+                                                <label class="custom-control-label" for="customSwitch{{$item->id}}" id="labelStatus{{$item->id}}">@if($item->status == 1)Aktif @else Pasif @endif</label>
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;" width="17%">
+                                            <a class="btn btn-light" href="{{ url('/admin/pages/edit/'.$item->id) }}">Düzenle</a>
+                                            <a class="btn btn-light" href="{{ url('/admin/pages/delete/'.$item->id) }}">Sil</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+            <a href="{{ url('/admin/pages/create/'.$id) }}" class="btn btn-primary" style="margin-top: 10px;"> Makale Ekle </a>
         </div>
     </div>
-
 
 
 @endsection
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('back_assets/css/toastr.min.css') }}">
+    <link rel="stylesheet" media="screen, print" href="{{ asset('back_assets/css/datatables.bundle.css') }}">
 @endsection
 
 @section('js')
     <script src="{{ asset('back_assets/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('back_assets/js/datatables.bundle.js') }}"></script>
     @if(\Session::has('status_success'))
         <script>
             toastr.success('Kayıt işlemi başarıyla gerçekleştirildi.', 'Sistem Mesajı!')
@@ -87,6 +86,14 @@
     @endif
 
     <script>
+        $(document).ready(function() {
+            $('#dt-basic-example').dataTable(
+                {
+                    responsive: true
+                });
+        });
+
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

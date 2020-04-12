@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContentStoreRequest;
+use App\Http\Requests\ContentUpdateRequest;
 use App\Models\Article;
 use App\Models\Page;
 use Illuminate\Http\Request;
@@ -34,6 +35,16 @@ class BaseController extends Controller
     }
 
     public function store(ContentStoreRequest $request){
+        $filename = "empty_img.png";
+        if ($request->image->getClientOriginalName()) {
+            $name = md5(rand(100, 200));
+            $ext = explode('.', $request->image->getClientOriginalName());
+            $filename = $name . '.' . $ext[1];
+            $destination = public_path('/front_assets/img/subject_img/' . $filename);
+            $location = $request->image->getPathName();
+            move_uploaded_file($location, $destination);
+        }
+
         try{
             $article = new Article();
             $article->page_id       = $request->page_id;
@@ -44,6 +55,8 @@ class BaseController extends Controller
             $article->read_count    = 0;
             $article->order         = 1;
             $article->status        = 1;
+            $article->site_url      = $request->site_url;
+            $article->image         = $filename;
             $article->save();
 
             $request->session()->flash('status_success', 'Kayıt işlemi başarıyla gerçekleştirildi.');
@@ -66,14 +79,31 @@ class BaseController extends Controller
         return view('back_office.edit', compact('article','page','main_page', 'article_id', 'page_id'));
     }
 
-    public function update(ContentStoreRequest $request){
+    public function update(ContentUpdateRequest $request){
+        $filename = "empty_img.png";
+        if ($request->image) {
+            $name = md5(rand(100, 200));
+            $ext = explode('.', $request->image->getClientOriginalName());
+            $filename = $name . '.' . $ext[1];
+            $destination = public_path('/front_assets/img/subject_img/' . $filename);
+            $location = $request->image->getPathName();
+            move_uploaded_file($location, $destination);
+
+
+            $article = Article::find($request->article_id);
+            $file = public_path('/front_assets/img/subject_img/' . $article->image);
+            if(file_exists($file))
+                unlink($file);
+        }
         try{
             Article::where('id', $request->article_id)
                 ->update([
                         'title'         => $request->title,
                         'content'       => $request->contents,
                         'description'   => $request->descriptions,
-                        'keywords'      => $request->keywords
+                        'keywords'      => $request->keywords,
+                        'site_url'      => $request->site_url,
+                        'image'         => $filename,
                     ]);
             $request->session()->flash('status_success', 'Update işlemi başarıyla gerçekleştirildi.');
             return redirect(url('/admin/pages/list/'.$request->page_id));
@@ -86,6 +116,9 @@ class BaseController extends Controller
     public function delete($id){
         try{
             $article = Article::find($id);
+            $file = public_path('/front_assets/img/subject_img/' . $article->image);
+            if(file_exists($file))
+                unlink($file);
             $article->delete();
             Session::flash('status_success', 'Silme işlemi başarıyla gerçekleştirildi.');
             return redirect()->back();

@@ -23,6 +23,8 @@ class CreateArticlesTable extends Migration
             $table->integer('read_count');
             $table->integer('order');
             $table->integer('status');
+            $table->string('site_url');
+            $table->string('image');
             $table->timestamps();
         });
     }

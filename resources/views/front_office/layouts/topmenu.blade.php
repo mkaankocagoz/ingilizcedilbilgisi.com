@@ -6,7 +6,7 @@
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="{{ url('/') }}">
-                                <img alt="Porto" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="img\logo.png">
+                                <img alt="Porto" width="100" height="48" data-sticky-width="82" data-sticky-height="40" data-sticky-top="25" src="{{ asset('img/logo.png') }}">
                             </a>
                         </div>
                     </div>
@@ -15,14 +15,14 @@
                     <div class="header-row pt-3">
                         <nav class="header-nav-top">
                             <ul class="nav nav-pills">
+{{--                                <li class="nav-item nav-item-anim-icon d-none d-md-block">--}}
+{{--                                    <a class="nav-link pl-0" href="about-us.html"><i class="fas fa-angle-right"></i> Hakkımızda</a>--}}
+{{--                                </li>--}}
                                 <li class="nav-item nav-item-anim-icon d-none d-md-block">
-                                    <a class="nav-link pl-0" href="about-us.html"><i class="fas fa-angle-right"></i> About Us</a>
-                                </li>
-                                <li class="nav-item nav-item-anim-icon d-none d-md-block">
-                                    <a class="nav-link" href="contact-us.html"><i class="fas fa-angle-right"></i> Contact Us</a>
+                                    <a class="nav-link" href="contact-us.html"><i class="fas fa-angle-right"></i> İletişim</a>
                                 </li>
                                 <li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-md-show">
-                                    <span class="ws-nowrap"><i class="fas fa-phone"></i> (123) 456-789</span>
+                                    <span class="ws-nowrap"><i class="fas fa-mail-bulk"></i> info@ingilizcedilbilgisi.com</span>
                                 </li>
                             </ul>
                         </nav>
@@ -37,18 +37,65 @@
                                                 Ana Sayfa
                                             </a>
                                         </li>
-{{--                                        <li class="dropdown">--}}
-{{--                                            <a class="dropdown-item dropdown-toggle" href="index.html">--}}
-{{--                                                Home2--}}
-{{--                                            </a>--}}
-{{--                                            <ul class="dropdown-menu">--}}
-{{--                                                <li>--}}
-{{--                                                    <a class="dropdown-item" href="index.html">--}}
-{{--                                                        Landing Page2--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                            </ul>--}}
-{{--                                        </li>--}}
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="index.html">
+                                                GRAMER
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="{{ url('/gramer').'/'.\Str::slug('Başlangıç Seviye Gramer') }}">
+                                                        Başlangıç Seviye Gramer
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="index.html">
+                                                        Orta Seviye Gramer
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="index.html">
+                                                        İleri Seviye Gramer
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="index.html">
+                                                KELİME
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="index.html">
+                                                        Yakın Anlamlı Kelimeler
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="index.html">
+                                                        Bağlaçlar
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="index.html">
+                                                        Önemli Fiiler
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="index.html">
+                                                        Edatlar
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="">
+                                            <a class="top__menu" href="#">
+                                                HİKAYE
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="top__menu" href="#">
+                                                BLOG
+                                            </a>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContentStoreRequest extends FormRequest
+class ContentUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,6 @@ class ContentStoreRequest extends FormRequest
             'title'         => 'required',
             'contents'      => 'required',
             'site_url'      => 'required',
-            'image'         => 'required',
         ];
     }
 
@@ -41,7 +40,6 @@ class ContentStoreRequest extends FormRequest
             'title.required'            => 'Lütfen başlık giriniz.',
             'contents.required'         => 'Lütfen içerik giriniz.',
             'site_url.required'         => 'Lütfen URL giriniz.',
-            'image.required'            => 'Lütfen resim giriniz.',
         ];
     }
 }

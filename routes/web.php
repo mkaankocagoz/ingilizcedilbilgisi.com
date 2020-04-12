@@ -20,6 +20,10 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::namespace('FrontController')->group(function () {
     Route::get('/', 'BaseController@index');
+    Route::get('/gramer/{site_url}/{article_url?}', 'BaseController@gramer');
+    Route::get('/kelime/{site_url?}', 'BaseController@kelime');
+    Route::get('/hikaye/{site_url?}', 'BaseController@hikaye');
+    Route::get('/blog/{site_url?}', 'BaseController@blog');
 });
 
 Route::group(['middleware' => ['isAdmin']], function () {
@@ -34,4 +38,8 @@ Route::group(['middleware' => ['isAdmin']], function () {
         Route::post('/admin/pages/update', 'BaseController@update');
         Route::get('/admin/pages/delete/{id}', 'BaseController@delete');
     });
+});
+
+Route::get('/asdasd', function (){
+   return view('front_office.detail');
 });
