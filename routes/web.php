@@ -20,10 +20,12 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::namespace('FrontController')->group(function () {
     Route::get('/', 'BaseController@index');
-    Route::get('/gramer/{site_url}/{article_url?}', 'BaseController@gramer');
-    Route::get('/kelime/{site_url?}', 'BaseController@kelime');
-    Route::get('/hikaye/{site_url?}', 'BaseController@hikaye');
-    Route::get('/blog/{site_url?}', 'BaseController@blog');
+    Route::get('/gramer/{site_url}/{article_url?}', 'BaseController@gramer_list');
+    Route::get('/kelime/{site_url}/{article_url?}', 'BaseController@kelime_list');
+    Route::get('/blog/{article_url?}', 'BaseController@blog');
+    Route::get('/hikaye/{article_url?}', 'BaseController@hikaye');
+
+    Route::get('/404-sayfa-bulunamadi', 'BaseController@page_not_found')->name('404-not-found');
 });
 
 Route::group(['middleware' => ['isAdmin']], function () {
@@ -41,5 +43,5 @@ Route::group(['middleware' => ['isAdmin']], function () {
 });
 
 Route::get('/asdasd', function (){
-   return view('front_office.detail');
+   return view('front_office.404');
 });

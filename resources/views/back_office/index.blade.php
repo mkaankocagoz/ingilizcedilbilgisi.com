@@ -30,23 +30,23 @@
                                 <li><a href="javascript:void(0)">GRAMER</a>
                                     <ul>
                                         <li><a href="{{ url('/admin/pages/list/3') }}">Başlangıç Seviye Gramer</a></li>
-                                        <li><a href="javascript:void(0)">Orta Seviye Gramer</a></li>
-                                        <li><a href="javascript:void(0)">İleri Seviye Gramer</a></li>
+                                        <li><a href="{{ url('/admin/pages/list/4') }}">Orta Seviye Gramer</a></li>
+                                        <li><a href="{{ url('/admin/pages/list/5') }}">İleri Seviye Gramer</a></li>
                                     </ul>
                                 </li>
                                 <hr>
                                 <li><a href="javascript:void(0)">KELİME</a>
                                     <ul>
-                                        <li><a href="javascript:void(0)">Yakın Anlamlı Kelimeler</a></li>
-                                        <li><a href="javascript:void(0)">Bağlaçlar</a></li>
-                                        <li><a href="javascript:void(0)">Önemli Fiiler</a></li>
-                                        <li><a href="javascript:void(0)">Edatlar</a></li>
+                                        <li><a href="{{ url('/admin/pages/list/7') }}">Yakın Anlamlı Kelimeler</a></li>
+                                        <li><a href="{{ url('/admin/pages/list/8') }}">Bağlaçlar</a></li>
+                                        <li><a href="{{ url('/admin/pages/list/9') }}">Önemli Fiiler</a></li>
+                                        <li><a href="{{ url('/admin/pages/list/10') }}">Edatlar</a></li>
                                     </ul>
                                 </li>
                                 <hr>
-                                <li><a href="javascript:void(0)">HİKAYE</a></li>
+                                <li><a href="{{ url('/admin/pages/list/11') }}">HİKAYE</a></li>
                                 <hr>
-                                <li><a href="javascript:void(0)">BLOG</a></li>
+                                <li><a href="{{ url('/admin/pages/list/12') }}">BLOG</a></li>
                             </ul>
 
                         </div>
