@@ -19,7 +19,7 @@
 {{--                                    <a class="nav-link pl-0" href="about-us.html"><i class="fas fa-angle-right"></i> Hakkımızda</a>--}}
 {{--                                </li>--}}
                                 <li class="nav-item nav-item-anim-icon d-none d-md-block">
-                                    <a class="nav-link" href="javascript:void(0);"><i class="fas fa-angle-right"></i> İletişim</a>
+                                    <a class="nav-link" href="{{ url('/iletisim') }}"><i class="fas fa-angle-right"></i> İletişim</a>
                                 </li>
                                 <li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-md-show">
                                     <span class="ws-nowrap"><i class="fas fa-mail-bulk"></i> info@ingilizcedilbilgisi.com</span>

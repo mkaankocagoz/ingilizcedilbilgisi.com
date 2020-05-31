@@ -4,6 +4,12 @@
 
     @include('front_office.layouts.breadcrumb', ['categoryName' => $categoryName, 'page' => $page])
 
+    <style>
+        .post-content p {
+            word-break: break-word;
+        }
+    </style>
+
     <div class="container py-4">
         <div class="row">
 

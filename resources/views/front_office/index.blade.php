@@ -83,7 +83,7 @@
         }
 
         .thumb-info-caption-text p {
-            word-break: break-all;
+            word-break: break-word;
         }
     </style>
 

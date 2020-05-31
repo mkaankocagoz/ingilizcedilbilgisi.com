@@ -118,7 +118,7 @@
                     <div class="contact-details">
                         <h5 class="text-3 mb-3">İLETİŞİM</h5>
                         <ul class="list list-icons list-icons-lg">
-                            <li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i><p class="m-0"><a href="javascript:void(0);">Bize Ulaş</a></p></li>
+                            <li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i><p class="m-0"><a href="{{ url('/iletisim') }}">Bize Ulaş</a></p></li>
                             <li class="mb-1"><i class="far fa-envelope text-color-primary"></i><p class="m-0"><a href="mailto:info@ingilizcedilbilgisi.com">info@ingilizcedilbilgisi.com</a></p></li>
                         </ul>
                     </div>
@@ -148,7 +148,7 @@
                         <nav id="sub-menu">
                             <ul>
                                 <li><i class="fas fa-angle-right"></i><a href="javascript:void(0);" class="ml-1 text-decoration-none"> Sitemap</a></li>
-                                <li><i class="fas fa-angle-right"></i><a href="javascript:void(0);" class="ml-1 text-decoration-none"> İletişim</a></li>
+                                <li><i class="fas fa-angle-right"></i><a href="{{ url('/iletisim') }}" class="ml-1 text-decoration-none"> İletişim</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -223,6 +223,16 @@
 
 
     });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133679849-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-133679849-2');
 </script>
 
 </body>

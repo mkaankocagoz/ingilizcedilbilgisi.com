@@ -25,8 +25,8 @@ class BaseController extends Controller
         $popular = $this->popular;
         $recent = $this->recent;
 
-        $gramer_dersleri = Article::whereIn('page_id', ['3,4,5'])->orderBy('created_at', 'DESC')->take(3)->get();
-        $kelime_dersleri = Article::whereIn('page_id', ['7,8,9,10'])->orderBy('created_at', 'DESC')->take(3)->get();
+        $gramer_dersleri = Article::whereIn('page_id', ['3,4,5'])->where('status', 1)->orderBy('created_at', 'DESC')->take(3)->get();
+        $kelime_dersleri = Article::whereIn('page_id', ['7,8,9,10'])->where('status', 1)->orderBy('created_at', 'DESC')->take(3)->get();
 
         return view('front_office.index', compact('popular', 'recent', 'gramer_dersleri', 'kelime_dersleri'));
     }
