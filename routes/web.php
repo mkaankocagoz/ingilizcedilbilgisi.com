@@ -42,6 +42,8 @@ Route::group(['middleware' => ['isAdmin']], function () {
     });
 });
 
+Route::post('/process/subscribers', 'ProcessController@post_email');
+
 Route::get('/asdasd', function (){
    return view('front_office.404');
 });

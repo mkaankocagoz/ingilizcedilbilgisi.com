@@ -30,7 +30,7 @@
                                                 @endif
                                             </h2>
                                             <p class="mb-0">
-                                                {{ \Str::limit(strip_tags($item->content), 400) }}
+                                                {!! \Str::limit(strip_tags($item->content, 400)) !!}
                                             </p>
                                         </div>
                                     </div>

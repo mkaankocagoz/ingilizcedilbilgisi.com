@@ -40,6 +40,12 @@
     <!-- Head Libs -->
     <script src="{{ asset('front_assets/js/modernizr.min.js') }}"></script>
 
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+
 </head>
 <body class="loading-overlay-showing" data-plugin-page-transition="" data-loading-overlay="" data-plugin-options="{'hideDelay': 500}">
 <div class="loading-overlay">
@@ -62,50 +68,70 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-ribbon">
-                <span>Footer halen yapım aşamasında</span>
+                <span>Get in Touch</span>
             </div>
-{{--            <div class="row py-5 my-4">--}}
-{{--                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">--}}
-{{--                    <h5 class="text-3 mb-3">NEWSLETTER</h5>--}}
-{{--                    <p class="pr-1">Keep up on our always evolving product features and technology. Enter your e-mail address and subscribe to our newsletter.</p>--}}
-{{--                    <div class="alert alert-success d-none" id="newsletterSuccess">--}}
-{{--                        <strong>Success!</strong> You've been added to our email list.--}}
-{{--                    </div>--}}
-{{--                    <div class="alert alert-danger d-none" id="newsletterError"></div>--}}
-{{--                    <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST" class="mr-4 mb-3 mb-md-0">--}}
-{{--                        <div class="input-group input-group-rounded">--}}
-{{--                            <input class="form-control form-control-sm bg-light" placeholder="Email Address" name="newsletterEmail" id="newsletterEmail" type="text">--}}
-{{--                            <span class="input-group-append">--}}
-{{--                                <button class="btn btn-light text-color-dark" type="submit"><strong>GO!</strong></button>--}}
-{{--                            </span>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">--}}
-{{--                    <h5 class="text-3 mb-3">LATEST TWEETS</h5>--}}
-{{--                    <div id="tweet" class="twitter" data-plugin-tweets="" data-plugin-options="{'username': 'oklerthemes', 'count': 2}">--}}
-{{--                        <p>Please wait...</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">--}}
-{{--                    <div class="contact-details">--}}
-{{--                        <h5 class="text-3 mb-3">CONTACT US</h5>--}}
-{{--                        <ul class="list list-icons list-icons-lg">--}}
-{{--                            <li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i><p class="m-0">234 Street Name, City Name</p></li>--}}
-{{--                            <li class="mb-1"><i class="fab fa-whatsapp text-color-primary"></i><p class="m-0"><a href="tel:8001234567">(800) 123-4567</a></p></li>--}}
-{{--                            <li class="mb-1"><i class="far fa-envelope text-color-primary"></i><p class="m-0"><a href="mailto:mail@example.com">mail@example.com</a></p></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-6 col-lg-2">--}}
-{{--                    <h5 class="text-3 mb-3">FOLLOW US</h5>--}}
-{{--                    <ul class="social-icons">--}}
-{{--                        <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>--}}
-{{--                        <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>--}}
-{{--                        <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="row py-5 my-4">
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-3 mb-3">NEWSLETTER</h5>
+                    <p class="pr-1">Sürekli güncellenen içeriklerimizden haberdar olabilmek için e posta adresinizi yazıp bize abone olabilirsiniz..</p>
+                    <div class="alert alert-success d-none" id="newsletterSuccess">
+                        <strong>Success!</strong> You've been added to our email list.
+                    </div>
+                    <div class="alert alert-danger d-none" id="newsletterError"></div>
+                    <form id="newsletterForm" action="javascript:void(0);" method="POST" class="mr-4 mb-3 mb-md-0">
+                        <div class="input-group input-group-rounded">
+                            <input class="form-control form-control-sm bg-light" placeholder="Email Adresi" name="newsletterEmail" id="newsletterEmail" type="email" required>
+                            <span class="input-group-append">
+                                <button class="btn btn-light text-color-dark" type="submit"><strong>KAYDOL!</strong></button>
+                            </span>
+                        </div>
+                        <p id="success" class="text-success hide">Kayıt işlemi başarıyla gerçekleşti.</p>
+                        <p id="error" class="text-danger hide">Kayıt sırasında bir hata gerçekleşti.</p>
+                        <p id="error2" class="text-warning hide">Email formatını yanlış yazdınız.</p>
+                        <p id="registered" class="text-warning hide">Bu email adresi daha önce kaydedilmiş.</p>
+                    </form>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h5 class="text-3 mb-3">son Konular</h5>
+                    <div id="tweet" class="twitter" data-plugin-tweets="" data-plugin-options="{'username': 'oklerthemes', 'count': 2}">
+                        @foreach($recent as $item)
+                            @php
+                                $page_id = $item->page_info->sub_page_id;
+                                if($page_id == 0){
+                                    $kategoriAdi = $item->page_info->page_name_slug;
+                                }
+                                else{
+                                    $page_infos = \App\Models\Page::find($page_id);
+                                    $kategoriAdi = $page_infos->page_name_slug;
+                                }
+
+                                if($kategoriAdi == 'blog' || $kategoriAdi == 'hikaye')
+                                    $item->page_info->page_name_slug = "";
+                                else
+                                    $item->page_info->page_name_slug = $item->page_info->page_name_slug."/";
+                            @endphp
+                            <p><a href="{{ url('/'.$kategoriAdi.'/'.$item->page_info->page_name_slug.$item->site_url) }}">{{ $item->title }}</a></p>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                    <div class="contact-details">
+                        <h5 class="text-3 mb-3">İLETİŞİM</h5>
+                        <ul class="list list-icons list-icons-lg">
+                            <li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i><p class="m-0"><a href="javascript:void(0);">Bize Ulaş</a></p></li>
+                            <li class="mb-1"><i class="far fa-envelope text-color-primary"></i><p class="m-0"><a href="mailto:info@ingilizcedilbilgisi.com">info@ingilizcedilbilgisi.com</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <h5 class="text-3 mb-3">TAKİP ET</h5>
+                    <ul class="social-icons">
+                        <li class="social-icons-facebook"><a href="javascript:void(0);" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="social-icons-twitter"><a href="javascript:void(0);" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li class="social-icons-linkedin"><a href="javascript:void(0);" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="footer-copyright">
             <div class="container py-2">
@@ -116,17 +142,16 @@
                         </a>
                     </div>
                     <div class="col-lg-7 d-flex align-items-center justify-content-center justify-content-lg-start mb-4 mb-lg-0">
-                        <p>© Copyright 2019. All Rights Reserved.</p>
+                        <p>© Copyright 2020. All Rights Reserved.</p>
                     </div>
-{{--                    <div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">--}}
-{{--                        <nav id="sub-menu">--}}
-{{--                            <ul>--}}
-{{--                                <li><i class="fas fa-angle-right"></i><a href="page-faq.html" class="ml-1 text-decoration-none"> FAQ's</a></li>--}}
-{{--                                <li><i class="fas fa-angle-right"></i><a href="sitemap.html" class="ml-1 text-decoration-none"> Sitemap</a></li>--}}
-{{--                                <li><i class="fas fa-angle-right"></i><a href="contact-us.html" class="ml-1 text-decoration-none"> Contact Us</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </nav>--}}
-{{--                    </div>--}}
+                    <div class="col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
+                        <nav id="sub-menu">
+                            <ul>
+                                <li><i class="fas fa-angle-right"></i><a href="javascript:void(0);" class="ml-1 text-decoration-none"> Sitemap</a></li>
+                                <li><i class="fas fa-angle-right"></i><a href="javascript:void(0);" class="ml-1 text-decoration-none"> İletişim</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
@@ -161,6 +186,44 @@
 <script src="{{ asset('front_assets/js/custom.js') }}"></script>
 <!-- Theme Initialization Files -->
 <script src="{{ asset('front_assets/js/theme.init.js') }}"></script>
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $("#newsletterForm").submit(function(e) {
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+        var form = $(this);
+        var url = '/process/subscribers';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function(data)
+            {
+                if(data.status == 0){
+                    var element = document.getElementById("error");
+                    element.classList.remove("hide");
+                }
+                else if(data.status == 1){
+                    var element = document.getElementById("success");
+                    element.classList.remove("hide");
+                }else if(data.status == 3){
+                    var element = document.getElementById("error2");
+                    element.classList.remove("hide");
+                }else{
+                    var element = document.getElementById("registered");
+                    element.classList.remove("hide");
+                }
+            }
+        });
+
+
+    });
+</script>
 
 </body>
 </html>

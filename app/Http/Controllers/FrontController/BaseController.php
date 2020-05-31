@@ -16,13 +16,19 @@ class BaseController extends Controller
     }
 
     public function page_not_found(){
-        return view('front_office.404');
+        $recent = $this->recent;
+
+        return view('front_office.404', compact( 'recent'));
     }
 
     public function index(){
         $popular = $this->popular;
         $recent = $this->recent;
-        return view('front_office.index', compact('popular', 'recent'));
+
+        $gramer_dersleri = Article::whereIn('page_id', ['3,4,5'])->orderBy('created_at', 'DESC')->take(3)->get();
+        $kelime_dersleri = Article::whereIn('page_id', ['7,8,9,10'])->orderBy('created_at', 'DESC')->take(3)->get();
+
+        return view('front_office.index', compact('popular', 'recent', 'gramer_dersleri', 'kelime_dersleri'));
     }
 
     public function gramer_list($site_url, $article_url = ""){
