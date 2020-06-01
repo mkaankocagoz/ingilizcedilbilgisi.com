@@ -47,11 +47,13 @@ class BaseController extends Controller
         else{
             $page = Page::select('id', 'page_name')->where('sub_page_id', 2)->where('page_name_slug', $site_url)->first();
             if($page){
+                $list_keywords      = "Gramer Konuları Anahtar Kelimeleri";
+                $list_description   = "Gramer Konuları Açıklamaları";
                 $article_list = Article::where('page_id', $page->id)
                     ->where('status', 1)
                     ->orderBy('order', 'ASC')
                     ->get();
-                return view('front_office.list', compact('site_url','article_list', 'popular', 'recent', 'categoryName', 'page'));
+                return view('front_office.list', compact('site_url','article_list', 'popular', 'recent', 'categoryName', 'page', 'list_keywords', 'list_description'));
             }
             else{
                 return redirect('/404-sayfa-bulunamadi/');
@@ -75,11 +77,13 @@ class BaseController extends Controller
         else{
             $page = Page::select('id', 'page_name')->where('sub_page_id', 6)->where('page_name_slug', $site_url)->first();
             if($page){
+                $list_keywords      = "Kelime Bilgisi Konuları Anahtar Kelimeleri";
+                $list_description   = "Kelime Bilgisi Konuları Açıklamaları";
                 $article_list = Article::where('page_id', $page->id)
                     ->where('status', 1)
                     ->orderBy('order', 'ASC')
                     ->get();
-                return view('front_office.list', compact('site_url','article_list', 'popular', 'recent', 'categoryName', 'page'));
+                return view('front_office.list', compact('site_url','article_list', 'popular', 'recent', 'categoryName', 'page', 'list_keywords', 'list_description'));
             }
             else{
                 return redirect('/404-sayfa-bulunamadi');
@@ -104,11 +108,13 @@ class BaseController extends Controller
         else{
             $page = Page::select('id', 'page_name')->where('sub_page_id', 0)->where('page_name_slug', 'blog')->first();
             if($page){
+                $list_keywords      = "Blog Konuları Anahtar Kelimeleri";
+                $list_description   = "Blog Konuları Açıklamaları";
                 $article_list = Article::where('page_id', $page->id)
                     ->where('status', 1)
                     ->orderBy('order', 'ASC')
                     ->get();
-                return view('front_office.list', compact('site_url', 'article_list',  'popular', 'recent', 'categoryName', 'page'));
+                return view('front_office.list', compact('site_url', 'article_list',  'popular', 'recent', 'categoryName', 'page', 'list_keywords', 'list_description'));
             }
             else{
                 return redirect('/404-sayfa-bulunamadi');
@@ -133,11 +139,13 @@ class BaseController extends Controller
         else{
             $page = Page::select('id', 'page_name')->where('sub_page_id', 0)->where('page_name_slug', 'hikaye')->first();
             if($page){
+                $list_keywords      = "Hikaye Anahtar Kelimeleri";
+                $list_description   = "Hikaye Konuları Açıklamaları";
                 $article_list = Article::where('page_id', $page->id)
                     ->where('status', 1)
                     ->orderBy('order', 'ASC')
                     ->get();
-                return view('front_office.list', compact('site_url', 'article_list',  'popular', 'recent', 'categoryName', 'page'));
+                return view('front_office.list', compact('site_url', 'article_list',  'popular', 'recent', 'categoryName', 'page', 'list_keywords', 'list_description'));
             }
             else{
                 return redirect('/404-sayfa-bulunamadi');

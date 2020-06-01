@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <meta name="keywords" content="İngilizce Dersleri">
-    <meta name="description" content="İngilizce Dersleri">
+    <meta name="keywords" content="@if(isset($article->keywords)){{ $article->description }} @elseif(isset($list_keywords)){{ $list_keywords }} @elseİngilizce Dersleri @endif">
+    <meta name="description" content="@if(isset($article->description)){{ $article->description }} @elseif(isset($list_keywords)){{ $list_description }} @elseİngilizce Dersleri @endif">
     <meta name="author" content="Mustafa Kaan KOCAGÖZ">
 
     <link rel="shortcut icon" href="{{ asset('img/logo-1.jpeg') }}" type="image/x-icon">
@@ -98,13 +98,13 @@
                             @php
                                 $page_id = $item->page_info->sub_page_id;
                                 if($page_id == 0){
-                                    $kategoriAdi = $item->page_info->page_name_slug;
+                                    $page_infos = \App\Models\Page::find($item->page_id);
+                                    $kategoriAdi = $page_infos->page_name_slug;
                                 }
                                 else{
                                     $page_infos = \App\Models\Page::find($page_id);
                                     $kategoriAdi = $page_infos->page_name_slug;
                                 }
-
                                 if($kategoriAdi == 'blog' || $kategoriAdi == 'hikaye')
                                     $item->page_info->page_name_slug = "";
                                 else
