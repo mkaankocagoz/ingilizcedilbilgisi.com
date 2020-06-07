@@ -96,6 +96,10 @@
                     <div id="tweet" class="twitter" data-plugin-tweets="" data-plugin-options="{'username': 'oklerthemes', 'count': 2}">
                         @foreach($recent as $item)
                             @php
+                                if(strpos($item->page_info->page_name_slug, '/')){
+                                    $item->page_info->page_name_slug = str_replace('/', '', $item->page_info->page_name_slug);
+                                }
+
                                 $page_id = $item->page_info->sub_page_id;
                                 if($page_id == 0){
                                     $page_infos = \App\Models\Page::find($item->page_id);
@@ -109,6 +113,7 @@
                                     $item->page_info->page_name_slug = "";
                                 else
                                     $item->page_info->page_name_slug = $item->page_info->page_name_slug."/";
+
                             @endphp
                             <p><a href="{{ url('/'.$kategoriAdi.'/'.$item->page_info->page_name_slug.$item->site_url) }}">{{ $item->title }}</a></p>
                         @endforeach

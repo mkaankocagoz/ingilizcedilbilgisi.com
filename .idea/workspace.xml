@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="508c9fcb-7b06-4ef0-9268-48a5a9a96a44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Helper/CommentHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontController/CommentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_07_114723_create_comments_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontController/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontController/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front_office/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front_office/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front_office/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front_office/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="C:/xampp/htdocs/VIDIZAYN/impact-nova-web" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -212,7 +217,10 @@
       <workItem from="1588457294602" duration="5825000" />
       <workItem from="1590880635693" duration="3625000" />
       <workItem from="1590916708528" duration="14484000" />
-      <workItem from="1591036819164" duration="1680000" />
+      <workItem from="1591036819164" duration="1950000" />
+      <workItem from="1591113558512" duration="120000" />
+      <workItem from="1591114210704" duration="18000" />
+      <workItem from="1591526988177" duration="6633000" />
     </task>
     <servers />
   </component>

@@ -25,6 +25,8 @@ Route::namespace('FrontController')->group(function () {
     Route::get('/blog/{article_url?}', 'BaseController@blog');
     Route::get('/hikaye/{article_url?}', 'BaseController@hikaye');
 
+    Route::post('post-comment', 'CommentController@post_comment');
+
     Route::get('/404-sayfa-bulunamadi', 'BaseController@page_not_found')->name('404-not-found');
 });
 
