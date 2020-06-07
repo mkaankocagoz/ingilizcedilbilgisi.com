@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ContentStoreRequest;
 use App\Http\Requests\ContentUpdateRequest;
 use App\Models\Article;
+use App\Models\Comment;
+use App\Models\ContactUs;
 use App\Models\Page;
+use App\Models\Subscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
@@ -161,6 +164,51 @@ class BaseController extends Controller
                 'success' => true,
                 'data'   => $e->getMessage()
             ));
+        }
+    }
+
+    public function comment_list(){
+        $comments = Comment::get();
+        return view('back_office.comments.list', compact('comments'));
+    }
+
+    public function comment_delete($id){
+        try{
+            $comment = Comment::find($id);
+            $comment->delete();
+            return redirect()->back();
+        }catch (\Exception $exception){
+            return redirect()->back();
+        }
+    }
+
+    public function contact_us_list(){
+        $contacts = ContactUs::get();
+        return view('back_office.contact_us.list', compact('contacts'));
+    }
+
+    public function contact_us_delete($id){
+        try{
+            $contact = ContactUs::find($id);
+            $contact->delete();
+            return redirect()->back();
+        }catch (\Exception $exception){
+            return redirect()->back();
+        }
+    }
+
+    public function subscriber_list(){
+        $subscribers = Subscriber::get();
+        return view('back_office.subscribers.list', compact('subscribers'));
+    }
+
+    public function subscriber_delete($id){
+        try{
+            $subscriber = Subscriber::find($id);
+            $subscriber->delete();
+            return redirect()->back();
+        }catch (\Exception $exception){
+            return redirect()->back();
         }
     }
 }

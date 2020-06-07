@@ -41,6 +41,16 @@ Route::group(['middleware' => ['isAdmin']], function () {
         Route::get('/admin/pages/edit/{id}', 'BaseController@edit');
         Route::post('/admin/pages/update', 'BaseController@update');
         Route::get('/admin/pages/delete/{id}', 'BaseController@delete');
+
+        /*Comment*/
+        Route::get('/admin/comments', 'BaseController@comment_list');
+        Route::get('/admin/comments/delete/{id}', 'BaseController@comment_delete');
+
+        Route::get('/admin/contact-us', 'BaseController@contact_us_list');
+        Route::get('/admin/contact-us/delete/{id}', 'BaseController@contact_us_delete');
+
+        Route::get('/admin/subscribers', 'BaseController@subscriber_list');
+        Route::get('/admin/subscribers/delete/{id}', 'BaseController@subscriber_delete');
     });
 });
 

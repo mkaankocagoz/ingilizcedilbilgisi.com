@@ -33,12 +33,12 @@
                                 <nav class="collapse">
                                     <ul class="nav nav-pills" id="mainNav">
                                         <li class="">
-                                            <a class="top__menu active" href="{{ url('/') }}">
+                                            <a class="top__menu @if(Request::segment(1) == null) active @endif" href="{{ url('/') }}">
                                                 Ana Sayfa
                                             </a>
                                         </li>
                                         <li class="dropdown">
-                                            <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">
+                                            <a class="dropdown-item dropdown-toggle @if(Request::segment(1) == 'gramer') active @endif" href="javascript:void(0);">
                                                 GRAMER
                                             </a>
                                             <ul class="dropdown-menu">
@@ -60,7 +60,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown">
-                                            <a class="dropdown-item dropdown-toggle" href="javascript:void(0);">
+                                            <a class="dropdown-item dropdown-toggle @if(Request::segment(1) == 'kelime') active @endif" href="javascript:void(0);">
                                                 KELİME
                                             </a>
                                             <ul class="dropdown-menu">
@@ -87,12 +87,12 @@
                                             </ul>
                                         </li>
                                         <li class="">
-                                            <a class="top__menu" href="{{ url('/hikaye') }}">
+                                            <a class="top__menu @if(Request::segment(1) == 'hikaye') active @endif" href="{{ url('/hikaye') }}">
                                                 HİKAYE
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a class="top__menu" href="{{ url('/blog') }}">
+                                            <a class="top__menu @if(Request::segment(1) == 'blog') active @endif" href="{{ url('/blog') }}">
                                                 BLOG
                                             </a>
                                         </li>
