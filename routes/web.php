@@ -51,6 +51,10 @@ Route::group(['middleware' => ['isAdmin']], function () {
 
         Route::get('/admin/subscribers', 'BaseController@subscriber_list');
         Route::get('/admin/subscribers/delete/{id}', 'BaseController@subscriber_delete');
+
+        Route::get('/admin/tests', 'TestController@index');
+        Route::get('/admin/tests/add', 'TestController@create');
+        Route::post('/admin/tests/add', 'TestController@store');
     });
 });
 

@@ -16,7 +16,7 @@
                         <article class="post post-large blog-single-post border-0 m-0 p-0">
                             <div class="post-image ml-0">
                                 <a href="blog-post.html">
-                                    <img src="{{ asset('front_assets/img/subject_img/'.$article->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                    <img src="{{ asset('front_assets/img/subject_img/'.$article->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $article->title }}">
                                 </a>
                             </div>
 
@@ -46,7 +46,7 @@
 
                             <div class="post-content ml-0">
 
-                                <h2 class="font-weight-bold"><a href="blog-post.html">Class aptent taciti sociosqu ad litora torquent</a></h2>
+                                <h2 class="font-weight-bold"><a href="blog-post.html">{{ $article->title }}</a></h2>
 
                                 <div class="post-meta">
                                     <span><i class="far fa-user"></i> By Admin </span>

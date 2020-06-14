@@ -32,4 +32,9 @@
             <span class="nav-link-text">Aboneler</span>
         </a>
     </li>
+    <li class="@if(Request::segment(2) == 'tests') active @endif">
+        <a href="{{ url('/admin/tests') }}">
+            <span class="nav-link-text">Testler</span>
+        </a>
+    </li>
 </ul>

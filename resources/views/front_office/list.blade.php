@@ -13,8 +13,6 @@
     <div class="container py-4">
         <div class="row">
 
-            @include('front_office.layouts.right_menu')
-
             <div class="col-lg-9 order-lg-1">
                 <div class="blog-posts">
                     @if(!$article_list->isEmpty())
@@ -23,7 +21,7 @@
                                 <div class="row mb-3">
                                     <div class="col-lg-5">
                                         <div class="post-image">
-                                            <img style="height: 200px;" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                            <img style="height: 200px;" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{$item->title}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-7">
@@ -81,6 +79,9 @@
 
                 </div>
             </div>
+
+            @include('front_office.layouts.right_menu')
+
         </div>
 
     </div>

@@ -109,7 +109,7 @@
                                             <a href="{{ url('/gramer/'.$site_url->page_name_slug.'/'.$item->site_url) }}" class="text-decoration-none">
                                                 <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom box-shadow-custom thumb-info-no-zoom thumb-info-side-image-custom-highlight appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="0" style="animation-delay: 0ms;">
                                                     <span class="thumb-info-side-image-wrapper">
-                                                        <img alt="" class="img-fluid" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
+                                                        <img alt="{{$item->title}}" class="img-fluid" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
                                                     </span>
                                                     <span class="thumb-info-caption">
                                                         <span class="thumb-info-caption-text">
@@ -126,7 +126,7 @@
                                             <a href="{{ url('/gramer/'.$site_url->page_name_slug.'/'.$item->site_url) }}" class="text-decoration-none">
                                                 <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom box-shadow-custom appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="300" style="animation-delay: 300ms;">
                                                     <span class="thumb-info-side-image-wrapper">
-                                                        <img alt="" class="img-fluid" style="max-width: 225px;" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
+                                                        <img alt="{{$item->title}}" class="img-fluid" style="max-width: 225px;" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
                                                     </span>
                                                     <span class="thumb-info-caption">
                                                         <span class="thumb-info-caption-text pr-3">
@@ -165,7 +165,7 @@
                                             <a href="{{ url('/kelime/'.$site_url->page_name_slug.'/'.$item->site_url) }}" class="text-decoration-none">
                                                 <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom box-shadow-custom thumb-info-no-zoom thumb-info-side-image-custom-highlight appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="0" style="animation-delay: 0ms;">
                                                     <span class="thumb-info-side-image-wrapper">
-                                                        <img alt="" class="img-fluid" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
+                                                        <img alt="{{$item->title}}" class="img-fluid" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
                                                     </span>
                                                     <span class="thumb-info-caption">
                                                         <span class="thumb-info-caption-text">
@@ -177,12 +177,12 @@
                                             </a>
                                 </div>
                                 <div class="col-lg-6">
-                                    @php $gramer_count = 2 @endphp
+                                    @php $kelime_count = 2 @endphp
                                     @else
                                         <a href="{{ url('/kelime/'.$site_url->page_name_slug.'/'.$item->site_url) }}" class="text-decoration-none">
                                             <span class="thumb-info thumb-info-side-image thumb-info-side-image-custom thumb-info-no-zoom box-shadow-custom appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="300" style="animation-delay: 300ms;">
                                                 <span class="thumb-info-side-image-wrapper">
-                                                    <img alt="" class="img-fluid" style="max-width: 225px;" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
+                                                    <img alt="{{$item->title}}" class="img-fluid" style="max-width: 225px;" src="{{ asset('front_assets/img/subject_img/'.$item->image) }}">
                                                 </span>
                                                 <span class="thumb-info-caption">
                                                     <span class="thumb-info-caption-text pr-3">
