@@ -15,7 +15,7 @@
                     @if(isset($article))
                         <article class="post post-large blog-single-post border-0 m-0 p-0">
                             <div class="post-image ml-0">
-                                <a href="blog-post.html">
+                                <a href="javascript:void(0);">
                                     <img src="{{ asset('front_assets/img/subject_img/'.$article->image) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="{{ $article->title }}">
                                 </a>
                             </div>

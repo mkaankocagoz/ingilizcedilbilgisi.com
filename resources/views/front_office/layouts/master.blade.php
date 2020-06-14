@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <meta name="keywords" content="@if(isset($article->keywords)){{ $article->description }} @elseif(isset($list_keywords)){{ $list_keywords }} @elseİngilizce Dersleri @endif">
+    <meta name="keywords" content="@if(isset($article->keywords)){{ $article->keywords }} @elseif(isset($list_keywords)){{ $list_keywords }} @elseİngilizce Dersleri @endif">
     <meta name="description" content="@if(isset($article->description)){{ $article->description }} @elseif(isset($list_keywords)){{ $list_description }} @elseİngilizce Dersleri @endif">
     <meta name="author" content="Mustafa Kaan KOCAGÖZ">
 
