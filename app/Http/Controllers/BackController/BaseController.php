@@ -83,7 +83,6 @@ class BaseController extends Controller
     }
 
     public function update(ContentUpdateRequest $request){
-        $filename = "empty_img.png";
         if ($request->image) {
             $name = md5(rand(100, 200));
             $ext = explode('.', $request->image->getClientOriginalName());
@@ -106,7 +105,6 @@ class BaseController extends Controller
                         'description'   => $request->descriptions,
                         'keywords'      => $request->keywords,
                         'site_url'      => $request->site_url,
-                        'image'         => $filename,
                     ]);
             $request->session()->flash('status_success', 'Update işlemi başarıyla gerçekleştirildi.');
             return redirect(url('/admin/pages/list/'.$request->page_id));
