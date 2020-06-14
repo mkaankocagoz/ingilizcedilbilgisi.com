@@ -46,7 +46,7 @@
 
                             <div class="post-content ml-0">
 
-                                <h2 class="font-weight-bold"><a href="blog-post.html">{{ $article->title }}</a></h2>
+                                <h2 class="font-weight-bold"><a href="javascript:void(0);">{{ $article->title }}</a></h2>
 
                                 <div class="post-meta">
                                     <span><i class="far fa-user"></i> By Admin </span>
